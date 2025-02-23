@@ -25,7 +25,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      name: SelfLocalUbuntu-ORGCPGE
+      name:  Default
     steps:
 
     - task: Docker@2
