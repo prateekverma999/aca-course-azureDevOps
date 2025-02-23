@@ -25,7 +25,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: ubuntu-latest
+      name: SelfLocalUbuntu-ORGCPGE
     steps:
 
     - task: Docker@2
