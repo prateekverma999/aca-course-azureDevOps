@@ -60,13 +60,6 @@ stages:
         imageToDeploy: '$(IMAGE_NAME):$(TAG)'
         containerAppName: '$(CONTAINERAPPS_APP)'
         resourceGroup: '$(RESOURCE_GROUP)'
-        containerAppEnvironment: '- task: AzureContainerApps@1
-  inputs:
-    azureSubscription: 'free trail'
-    imageToDeploy: '$(IMAGE_NAME):$(TAG)'
-    containerAppName: '$(CONTAINERAPPS_APP)'
-    resourceGroup: '$(RESOURCE_GROUP)'
-    containerAppEnvironment: '$(CONTAINERAPPS_ENVIRONMENT)'
-    targetPort: '3500''
+        containerAppEnvironment: '$(CONTAINERAPPS_ENVIRONMENT)'
         targetPort: '3500'
         ingress: 'external'
