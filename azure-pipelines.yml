@@ -56,7 +56,7 @@ stages:
     - task: AzureContainerApps@1
       displayName: Deploy new container version
       inputs:
-        azureSubscription: 'azure-connection'
+        azureSubscription: 'free trail'
         imageToDeploy: '$(IMAGE_NAME):$(TAG)'
         containerAppName: '$(CONTAINERAPPS_APP)'
         resourceGroup: '$(RESOURCE_GROUP)'
