@@ -39,7 +39,7 @@ stages:
     - task: Docker@2
       displayName: Push image to Docker Hub
       inputs:
-        containerRegistry: 'dockerhub-connection'
+        containerRegistry: 'Docker Hub'
         repository: $(IMAGE_NAME)
         command: 'push'
         tags: '$(TAG)'
@@ -60,6 +60,13 @@ stages:
         imageToDeploy: '$(IMAGE_NAME):$(TAG)'
         containerAppName: '$(CONTAINERAPPS_APP)'
         resourceGroup: '$(RESOURCE_GROUP)'
-        containerAppEnvironment: '$(CONTAINERAPPS_ENVIRONMENT)'
+        containerAppEnvironment: '- task: AzureContainerApps@1
+  inputs:
+    azureSubscription: 'free trail'
+    imageToDeploy: '$(IMAGE_NAME):$(TAG)'
+    containerAppName: '$(CONTAINERAPPS_APP)'
+    resourceGroup: '$(RESOURCE_GROUP)'
+    containerAppEnvironment: '$(CONTAINERAPPS_ENVIRONMENT)'
+    targetPort: '3500''
         targetPort: '3500'
         ingress: 'external'
